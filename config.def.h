@@ -1,6 +1,5 @@
 /* See LICENSE file for copyright and license details. */
 
-#include "fibonacci.c"
 #include "movestack.c"
 
 /* appearance */
