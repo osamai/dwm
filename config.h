@@ -50,6 +50,8 @@ static const Layout layouts[] = {
 	{ "[M]",      monocle },
  	{ "[@]",      spiral },
  	{ "[\\]",     dwindle },
+	{ "|M|",      centeredmaster },
+	{ ">M>",      centeredfloatingmaster },
 };
 
 /* key definitions */
@@ -96,10 +98,12 @@ static Key keys[] = {
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[4]} },
-	//{ MODKEY,                       XK_space,  setlayout,      {0} },
-	//{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[5]} },
+	{ MODKEY,                       XK_o,      setlayout,      {.v = &layouts[6]} },
   { Mod1Mask,                     XK_space,  setlayout,      {0} },
   { Mod1Mask|ShiftMask,           XK_space,  togglefloating, {0} },
+	//{ MODKEY,                       XK_space,  setlayout,      {0} },
+	//{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_s,      togglesticky,   {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
