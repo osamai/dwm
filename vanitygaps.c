@@ -10,14 +10,14 @@ static void incrivgaps(const Arg *arg);
 static void togglegaps(const Arg *arg);
 /* Layouts (delete the ones you do not need) */
 static void bstack(Monitor *m);
-static void bstackhoriz(Monitor *m);
+// static void bstackhoriz(Monitor *m);
 static void centeredmaster(Monitor *m);
 static void centeredfloatingmaster(Monitor *m);
 static void deck(Monitor *m);
 static void dwindle(Monitor *m);
 static void fibonacci(Monitor *m, int s);
-static void grid(Monitor *m);
-static void nrowgrid(Monitor *m);
+// static void grid(Monitor *m);
+// static void nrowgrid(Monitor *m);
 static void spiral(Monitor *m);
 static void tile(Monitor *m);
 /* Internals */
@@ -235,6 +235,7 @@ bstack(Monitor *m)
 	}
 }
 
+/*
 static void
 bstackhoriz(Monitor *m)
 {
@@ -276,6 +277,7 @@ bstackhoriz(Monitor *m)
 		}
 	}
 }
+*/
 
 /*
  * Centred master layout + gaps
