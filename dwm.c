@@ -195,7 +195,7 @@ static Client *nexttagged(Client *c);
 static Client *nexttiled(Client *c);
 static void pop(Client *);
 static void propertynotify(XEvent *e);
-static void quit(const Arg *arg);
+// static void quit(const Arg *arg);
 static Monitor *recttomon(int x, int y, int w, int h);
 static void resize(Client *c, int x, int y, int w, int h, int interact);
 static void resizeclient(Client *c, int x, int y, int w, int h);
@@ -209,7 +209,7 @@ static void setclientstate(Client *c, long state);
 static void setfocus(Client *c);
 static void setfullscreen(Client *c, int fullscreen);
 static void setlayout(const Arg *arg);
-static void setcfact(const Arg *arg);
+// static void setcfact(const Arg *arg);
 static void setmfact(const Arg *arg);
 static void setup(void);
 static void seturgent(Client *c, int urg);
@@ -248,7 +248,7 @@ static void zoom(const Arg *arg);
 static void keyrelease(XEvent *e);
 static void combotag(const Arg *arg);
 static void comboview(const Arg *arg);
-static void focusmaster(const Arg *arg);
+// static void focusmaster(const Arg *arg);
 static void centeredmaster(Monitor *m);
 static void centeredfloatingmaster(Monitor *m);
 
@@ -1307,11 +1307,13 @@ propertynotify(XEvent *e)
 	}
 }
 
+/*
 void
 quit(const Arg *arg)
 {
 	running = 0;
 }
+*/
 
 Monitor *
 recttomon(int x, int y, int w, int h)
@@ -1573,6 +1575,7 @@ setlayout(const Arg *arg)
 		drawbar(selmon);
 }
 
+/*
 void setcfact(const Arg *arg) {
 	float f;
 	Client *c;
@@ -1589,6 +1592,7 @@ void setcfact(const Arg *arg) {
 	c->cfact = f;
 	arrange(selmon);
 }
+*/
 
 /* arg > 1.0 will set mfact absolutely */
 void
@@ -2281,6 +2285,7 @@ main(int argc, char *argv[])
 	return EXIT_SUCCESS;
 }
 
+/*
 void
 focusmaster(const Arg *arg)
 {
@@ -2294,3 +2299,4 @@ focusmaster(const Arg *arg)
 	if (c)
 		focus(c);
 }
+*/
