@@ -61,12 +61,14 @@ static const Layout layouts[] = {
 	{ ">M>",      centeredfloatingmaster },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ NULL,       NULL },
-	// { "H[]",      deck },
-	// { "===",      bstackhoriz },
-	// { "HHH",      grid },
-	// { "###",      nrowgrid },
-	// { "---",      horizgrid },
-	// { ":::",      gaplessgrid },
+	/*
+	{ "H[]",      deck },
+	{ "===",      bstackhoriz },
+	{ "HHH",      grid },
+	{ "###",      nrowgrid },
+	{ "---",      horizgrid },
+	{ ":::",      gaplessgrid },
+	*/
 };
 
 /* key definitions */
