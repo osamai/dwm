@@ -32,13 +32,13 @@ typedef struct {
 	const void *cmd;
 } Sp;
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
-const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "ranger", NULL };
-const char *spcmd3[] = {"keepassxc", NULL };
+//const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "ranger", NULL };
+//const char *spcmd3[] = {"keepassxc", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
-	{"spranger",    spcmd2},
-	{"keepassxc",   spcmd3},
+	//{"spranger",    spcmd2},
+	//{"keepassxc",   spcmd3},
 };
 
 /* tagging */
@@ -54,8 +54,8 @@ static const Rule rules[] = {
 	{ "Firefox",  NULL,        NULL,       1 << 8,       0,           0,           -1 },
 	{ "Chromium", NULL,        NULL,       1 << 8,       0,           0,           -1 },
 	{ NULL,       "spterm",    NULL,       SPTAG(0),     0,           1,           -1 },
-	{ NULL,       "spfm",      NULL,       SPTAG(1),     0,           1,           -1 },
-	{ NULL,       "keepassxc", NULL,       SPTAG(2),     0,           0,           -1 },
+	//{ NULL,       "spfm",      NULL,       SPTAG(1),     0,           1,           -1 },
+	//{ NULL,       "keepassxc", NULL,       SPTAG(2),     0,           0,           -1 },
 };
 
 /* layout(s) */
@@ -105,13 +105,13 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
+//static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_Return, togglescratch,  {.v = scratchpadcmd } },
+	//{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -146,9 +146,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_y,      togglescratch,  {.ui = 0 } },
-	{ MODKEY,                       XK_u,      togglescratch,  {.ui = 1 } },
-	{ MODKEY,                       XK_x,      togglescratch,  {.ui = 2 } },
+	{ MODKEY,                       XK_grave,  togglescratch,  {.ui = 0 } },
+	//{ MODKEY,                       XK_u,      togglescratch,  {.ui = 1 } },
+	//{ MODKEY,                       XK_x,      togglescratch,  {.ui = 2 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
