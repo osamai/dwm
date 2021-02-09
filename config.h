@@ -73,6 +73,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod4Mask
+#define ALTKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      comboview,      {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -137,6 +138,33 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
+
+	{ ALTKEY,                       XK_v,      spawn, SHCMD("$TERMINAL -e $EDITOR") },
+	{ ALTKEY,                       XK_f,      spawn, SHCMD("$TERMINAL -e nnn -Rr") },
+	{ ALTKEY,                       XK_m,      spawn, SHCMD("$TERMINAL -e ncmpcpp") },
+	{ ALTKEY,                       XK_e,      spawn, SHCMD("$TERMINAL -e neomutt") },
+	{ ALTKEY,                       XK_b,      spawn, SHCMD("$BROWSER") },
+	{ ALTKEY,                       XK_p,      spawn, SHCMD("mpv $(xclip -o)") },
+	{ ALTKEY|ShiftMask,             XK_l,      spawn, SHCMD("slock") },
+	{ ALTKEY,                       XK_equal,  spawn, SHCMD("volumectl up") },
+	{ ALTKEY,                       XK_minus,  spawn, SHCMD("volumectl down") },
+	{ ALTKEY,                       XK_BackSpace,  spawn, SHCMD("volumectl toggle") },
+	{ MODKEY|ShiftMask,             XK_BackSpace,  spawn, SHCMD("dmenushutdown") },
+	{ 0,                            XK_Print,  spawn, SHCMD("maim -u -i $(xdotool getactivewindow) | xclip -sel clip -t image/png") },
+	{ ShiftMask,                    XK_Print,  spawn, SHCMD("maim -u -i $(xdotool getactivewindow) ~/Pictures/screenshot-$(date +%s).png") },
+	{ ControlMask,                  XK_Print,  spawn, SHCMD("maim -s | xclip -sel clip -t image/png") },
+	{ ControlMask|ShiftMask,        XK_Print,  spawn, SHCMD("maim -s ~/Pictures/screenshot-$(date +%s).png") },
+	{ ALTKEY|ShiftMask,             XK_period, spawn, SHCMD("mpc -q next") },
+	{ ALTKEY|ShiftMask,             XK_comma,  spawn, SHCMD("mpc -q prev") },
+	{ ALTKEY|ShiftMask,             XK_r,  spawn, SHCMD("mpc -q repeat") },
+	{ ALTKEY|ShiftMask,             XK_z,  spawn, SHCMD("mpc -q random") },
+	{ ALTKEY|ShiftMask,             XK_s,  spawn, SHCMD("mpc -q single") },
+	{ ALTKEY|ShiftMask,             XK_space,  spawn, SHCMD("mpc -q toggle") },
+	{ ALTKEY|ShiftMask,             XK_BackSpace,  spawn, SHCMD("mpc -q seek 0") },
+	{ ALTKEY|ShiftMask,             XK_equal,  spawn, SHCMD("mpc -q volume +5") },
+	{ ALTKEY|ShiftMask,             XK_minus,  spawn, SHCMD("mpc -q volume -5") },
+	{ ALTKEY|ShiftMask,             XK_p,  spawn, SHCMD("notify-send \"Playing\" \"$(mpc current)\"") },
+	{ ControlMask|ShiftMask,        XK_BackSpace,  spawn, SHCMD("dunstctl set-paused toggle") },
 
 	/*
 	{ MODKEY|ShiftMask,             XK_h,      setcfact,       {.f = +0.25} },
