@@ -158,7 +158,7 @@ static Key keys[] = {
 	{ ALTKEY|ShiftMask,             XK_comma,     spawn,       SHCMD("mpc -q prev") },
 	{ ALTKEY|ShiftMask,             XK_r,         spawn,       SHCMD("mpc -q repeat") },
 	{ ALTKEY|ShiftMask,             XK_z,         spawn,       SHCMD("mpc -q random") },
-	{ ALTKEY|ShiftMask,             XK_s          spawn,       SHCMD("mpc -q single") },
+	{ ALTKEY|ShiftMask,             XK_s,         spawn,       SHCMD("mpc -q single") },
 	{ ALTKEY|ShiftMask,             XK_space,     spawn,       SHCMD("mpc -q toggle") },
 	{ ALTKEY|ShiftMask,             XK_BackSpace, spawn,       SHCMD("mpc -q seek 0") },
 	{ ALTKEY|ShiftMask,             XK_equal,     spawn,       SHCMD("mpc -q volume +5") },
