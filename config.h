@@ -163,6 +163,7 @@ static Key keys[] = {
 	{ ALTKEY,                       XK_f,         spawn,       SHCMD("$TERMINAL -e nnn -Rr") },
 	{ ALTKEY,                       XK_m,         spawn,       SHCMD("$TERMINAL -e ncmpcpp") },
 	{ ALTKEY,                       XK_e,         spawn,       SHCMD("$TERMINAL -e neomutt") },
+	{ ALTKEY|ShiftMask,             XK_e,         spawn,       SHCMD("mw -Y; $TERMINAL -e neomutt") },
 	{ ALTKEY,                       XK_b,         spawn,       SHCMD("$BROWSER") },
 	{ ALTKEY,                       XK_p,         spawn,       SHCMD("mpv $(xclip -o)") },
 	{ ALTKEY|ShiftMask,             XK_l,         spawn,       SHCMD("slock") },
@@ -183,7 +184,7 @@ static Key keys[] = {
 	{ ALTKEY|ShiftMask,             XK_BackSpace, spawn,       SHCMD("mpc -q seek 0") },
 	{ ALTKEY|ShiftMask,             XK_equal,     spawn,       SHCMD("mpc -q volume +5") },
 	{ ALTKEY|ShiftMask,             XK_minus,     spawn,       SHCMD("mpc -q volume -5") },
-	{ ALTKEY|ShiftMask,             XK_p,         spawn,       SHCMD("notify-send \"Playing\" \"$(mpc current)\"") },
+	{ ALTKEY|ShiftMask,             XK_p,         spawn,       SHCMD("notify-send Playing \"$(mpc current)\"") },
 	{ ControlMask|ShiftMask,        XK_BackSpace, spawn,       SHCMD("dunstctl set-paused toggle") },
 
 	/*
