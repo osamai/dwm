@@ -21,7 +21,7 @@ static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
+	/*                fg         bg         border   */
 	[SchemeNorm]  = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]   = { col_gray4, col_cyan,  col_cyan  },
 	[SchemeTitle] = { col_gray4, col_gray1, col_cyan  },
@@ -37,6 +37,7 @@ const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
+	{"spterm2",     spcmd1},
 	//{"spranger",    spcmd2},
 	//{"keepassxc",   spcmd3},
 };
@@ -54,6 +55,7 @@ static const Rule rules[] = {
 	{ "Firefox",  NULL,        NULL,       1 << 8,       0,           0,           -1 },
 	{ "Chromium", NULL,        NULL,       1 << 8,       0,           0,           -1 },
 	{ NULL,       "spterm",    NULL,       SPTAG(0),     0,           1,           -1 },
+	{ NULL,       "spterm2",   NULL,       SPTAG(1),     0,           1,           -1 },
 	//{ NULL,       "spfm",      NULL,       SPTAG(1),     0,           1,           -1 },
 	//{ NULL,       "keepassxc", NULL,       SPTAG(2),     0,           0,           -1 },
 };
@@ -147,6 +149,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.ui = 0 } },
+	{ MODKEY|ShiftMask,             XK_grave,  togglescratch,  {.ui = 1 } },
 	//{ MODKEY,                       XK_u,      togglescratch,  {.ui = 1 } },
 	//{ MODKEY,                       XK_x,      togglescratch,  {.ui = 2 } },
 	TAGKEYS(                        XK_1,                      0)
