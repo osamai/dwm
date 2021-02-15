@@ -32,14 +32,11 @@ typedef struct {
 	const void *cmd;
 } Sp;
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
-//const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "ranger", NULL };
-//const char *spcmd3[] = {"keepassxc", NULL };
+const char *spcmd2[] = {"st", "-n", "spterm2", "-g", "120x34", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
 	{"spterm2",     spcmd1},
-	//{"spranger",    spcmd2},
-	//{"keepassxc",   spcmd3},
 };
 
 /* tagging */
@@ -56,8 +53,6 @@ static const Rule rules[] = {
 	{ "Chromium", NULL,        NULL,       1 << 8,       0,           0,           -1 },
 	{ NULL,       "spterm",    NULL,       SPTAG(0),     0,           1,           -1 },
 	{ NULL,       "spterm2",   NULL,       SPTAG(1),     0,           1,           -1 },
-	//{ NULL,       "spfm",      NULL,       SPTAG(1),     0,           1,           -1 },
-	//{ NULL,       "keepassxc", NULL,       SPTAG(2),     0,           0,           -1 },
 };
 
 /* layout(s) */
@@ -80,14 +75,6 @@ static const Layout layouts[] = {
 	{ ">M>",      centeredfloatingmaster },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ NULL,       NULL },
-	/*
-	{ "H[]",      deck },
-	{ "===",      bstackhoriz },
-	{ "HHH",      grid },
-	{ "###",      nrowgrid },
-	{ "---",      horizgrid },
-	{ ":::",      gaplessgrid },
-	*/
 };
 
 /* key definitions */
@@ -150,8 +137,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.ui = 0 } },
 	{ MODKEY|ShiftMask,             XK_grave,  togglescratch,  {.ui = 1 } },
-	//{ MODKEY,                       XK_u,      togglescratch,  {.ui = 1 } },
-	//{ MODKEY,                       XK_x,      togglescratch,  {.ui = 2 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -161,7 +146,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-
 	{ ALTKEY,                       XK_v,         spawn,       SHCMD("$TERMINAL -e $EDITOR") },
 	{ ALTKEY,                       XK_f,         spawn,       SHCMD("$TERMINAL -e nnn -Rr") },
 	{ ALTKEY,                       XK_m,         spawn,       SHCMD("$TERMINAL -e ncmpcpp") },
