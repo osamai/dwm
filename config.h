@@ -169,6 +169,8 @@ static Key keys[] = {
 	{ ALTKEY|ShiftMask,             XK_minus,     spawn,       SHCMD("mpc -q volume -5") },
 	{ ALTKEY|ShiftMask,             XK_p,         spawn,       SHCMD("notify-send Playing \"$(mpc current)\"") },
 	{ ControlMask|ShiftMask,        XK_BackSpace, spawn,       SHCMD("dunstctl set-paused toggle") },
+	{ 0,                            XK_F4,        spawn,       SHCMD("[ \"$(setxkbmap -query | grep layout | awk '{print $2}')\" = 'us' ] && setxkbmap ar || setxkbmap us") },
+
 
 	/*
 	{ MODKEY|ShiftMask,             XK_h,      setcfact,       {.f = +0.25} },
