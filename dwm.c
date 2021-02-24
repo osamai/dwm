@@ -212,7 +212,7 @@ static void setclientstate(Client *c, long state);
 static void setfocus(Client *c);
 static void setfullscreen(Client *c, int fullscreen);
 static void setlayout(const Arg *arg);
-// static void setcfact(const Arg *arg);
+static void setcfact(const Arg *arg);
 static void setmfact(const Arg *arg);
 static void setup(void);
 static void seturgent(Client *c, int urg);
@@ -1583,7 +1583,6 @@ setlayout(const Arg *arg)
 		drawbar(selmon);
 }
 
-/*
 void setcfact(const Arg *arg) {
 	float f;
 	Client *c;
@@ -1600,7 +1599,6 @@ void setcfact(const Arg *arg) {
 	c->cfact = f;
 	arrange(selmon);
 }
-*/
 
 /* arg > 1.0 will set mfact absolutely */
 void
