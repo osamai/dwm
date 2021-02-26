@@ -54,10 +54,10 @@
 #define MOUSEMASK               (BUTTONMASK|PointerMotionMask)
 #define WIDTH(X)                ((X)->w + 2 * (X)->bw)
 #define HEIGHT(X)               ((X)->h + 2 * (X)->bw)
-#define NUMTAGS					(LENGTH(tags) + LENGTH(scratchpads))
-#define TAGMASK     			((1 << NUMTAGS) - 1)
-#define SPTAG(i) 				((1 << LENGTH(tags)) << (i))
-#define SPTAGMASK   			(((1 << LENGTH(scratchpads))-1) << LENGTH(tags))
+#define NUMTAGS                 (LENGTH(tags) + LENGTH(scratchpads))
+#define TAGMASK                 ((1 << NUMTAGS) - 1)
+#define SPTAG(i)                ((1 << LENGTH(tags)) << (i))
+#define SPTAGMASK               (((1 << LENGTH(scratchpads))-1) << LENGTH(tags))
 #define TEXTW(X)                (drw_fontset_getwidth(drw, (X)) + lrpad)
 
 /* enums */
@@ -276,7 +276,7 @@ static Window root, wmcheckwin;
 /* configuration, allows nested code to access above variables */
 #include "config.h"
 
-static unsigned int scratchtag = 1 << LENGTH(tags);
+//static unsigned int scratchtag = 1 << LENGTH(tags);
 
 /* compile-time check if all tags fit into an unsigned int bit array. */
 struct NumTags { char limitexceeded[LENGTH(tags) > 31 ? -1 : 1]; };
@@ -1048,14 +1048,6 @@ manage(Window w, XWindowAttributes *wa)
 		&& (c->x + (c->w / 2) < c->mon->wx + c->mon->ww)) ? bh : c->mon->my);
 	c->bw = borderpx;
 
-	selmon->tagset[selmon->seltags] &= ~scratchtag;
-	if (!strcmp(c->name, scratchpadname)) {
-		c->mon->tagset[c->mon->seltags] |= c->tags = scratchtag;
-		c->isfloating = True;
-		c->x = c->mon->wx + (c->mon->ww / 2 - WIDTH(c) / 2);
-		c->y = c->mon->wy + (c->mon->wh / 2 - HEIGHT(c) / 2);
-	}
-
 	wc.border_width = c->bw;
 	XConfigureWindow(dpy, w, CWBorderWidth, &wc);
 	XSetWindowBorder(dpy, w, scheme[SchemeNorm][ColBorder].pixel);
@@ -1635,7 +1627,6 @@ spawn(const Arg *arg)
 {
 	if (arg->v == dmenucmd)
 		dmenumon[0] = '0' + selmon->num;
-	selmon->tagset[selmon->seltags] &= ~scratchtag;
 	if (fork() == 0) {
 		if (dpy)
 			close(ConnectionNumber(dpy));
@@ -2021,9 +2012,8 @@ updatewindowtype(Client *c)
 
 	if (state == netatom[NetWMFullscreen])
 		setfullscreen(c, 1);
-	if (wtype == netatom[NetWMWindowTypeDialog]) {
+	if (wtype == netatom[NetWMWindowTypeDialog])
 		c->isfloating = 1;
-	}
 }
 
 void
