@@ -49,7 +49,6 @@ static const Rule rules[] = {
 	{ "Firefox",  NULL,        NULL,       1 << 8,       0,           -1 },
 	{ "Chromium", NULL,        NULL,       1 << 8,       0,           -1 },
 	{ NULL,       "spterm",    NULL,       SPTAG(0),     1,           -1 },
-	{ NULL,       NULL, "Picture in picture",  0,        1,           -1 },
 };
 
 /* layout(s) */
