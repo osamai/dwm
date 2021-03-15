@@ -152,6 +152,7 @@ static Key keys[] = {
 	{ ALTKEY|ShiftMask,             XK_BackSpace, spawn,          SHCMD("volumectl toggle") },
 	{ MODKEY|ShiftMask,             XK_BackSpace, spawn,          SHCMD("dmenushutdown") },
 	{ 0,                            XK_Print,     spawn,          SHCMD("dmenuscreenshot") },
+	{ MODKEY|ShiftMask,             XK_p,         spawn,          SHCMD("passmenu") },
 	{ ALTKEY|ShiftMask,             XK_period,    spawn,          SHCMD("mpc -q next") },
 	{ ALTKEY|ShiftMask,             XK_comma,     spawn,          SHCMD("mpc -q prev") },
 	{ ALTKEY|ShiftMask,             XK_r,         spawn,          SHCMD("mpc -q repeat") },
