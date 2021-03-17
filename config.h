@@ -162,7 +162,7 @@ static Key keys[] = {
 	{ ALTKEY|ShiftMask,             XK_space,     spawn,          SHCMD("mpc -q toggle") },
 	{ ALTKEY|ShiftMask,             XK_equal,     spawn,          SHCMD("mpc -q volume +5") },
 	{ ALTKEY|ShiftMask,             XK_minus,     spawn,          SHCMD("mpc -q volume -5") },
-	{ ALTKEY|ShiftMask,             XK_p,         spawn,          SHCMD("notify-send Playing \"$(mpc current)\"") },
+	{ ALTKEY|ShiftMask,             XK_p,         spawn,          SHCMD("notify-send -a Music Playing \"$(mpc current)\"") },
 	{ ALTKEY,                       XK_BackSpace, spawn,          SHCMD("dunstctl set-paused toggle") },
 	{ ALTKEY,                       XK_backslash, spawn,          SHCMD("dunstctl history-pop") },
 	{ ALTKEY|ShiftMask,             XK_backslash, spawn,          SHCMD("dunstctl close-all") },
