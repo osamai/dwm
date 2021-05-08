@@ -150,10 +150,6 @@ static Key keys[] = {
 	{ ALTKEY,                       XK_equal,     spawn,          SHCMD("volumectl up") },
 	{ ALTKEY,                       XK_minus,     spawn,          SHCMD("volumectl down") },
 	{ ALTKEY|ShiftMask,             XK_BackSpace, spawn,          SHCMD("volumectl toggle") },
-	{ MODKEY|ShiftMask,             XK_BackSpace, spawn,          SHCMD("dmenushutdown") },
-	{ 0,                            XK_Print,     spawn,          SHCMD("dmenuscreenshot") },
-	{ ShiftMask,                    XK_Print,     spawn,          SHCMD("dmenurecord") },
-	{ MODKEY|ShiftMask,             XK_p,         spawn,          SHCMD("passmenu") },
 	{ ALTKEY|ShiftMask,             XK_period,    spawn,          SHCMD("mpc -q next") },
 	{ ALTKEY|ShiftMask,             XK_comma,     spawn,          SHCMD("mpc -q prev") },
 	{ ALTKEY|ShiftMask,             XK_r,         spawn,          SHCMD("mpc -q repeat") },
@@ -167,8 +163,13 @@ static Key keys[] = {
 	{ ALTKEY,                       XK_BackSpace, spawn,          SHCMD("dunstctl set-paused toggle") },
 	{ ALTKEY,                       XK_backslash, spawn,          SHCMD("dunstctl history-pop") },
 	{ ALTKEY|ShiftMask,             XK_backslash, spawn,          SHCMD("dunstctl close-all") },
+	{ MODKEY|ShiftMask,             XK_p,         spawn,          SHCMD("passmenu") },
 	{ 0,                            XK_F4,        spawn,          SHCMD("keymapswitch us ar") },
 	{ 0,                            XK_F5,        spawn,          SHCMD("dmenuhandler") },
+	{ 0,                            XK_Print,     spawn,          SHCMD("dmenuscreenshot") },
+	{ ShiftMask,                    XK_Print,     spawn,          SHCMD("dmenurecord") },
+	{ ALTKEY|ShiftMask,             XK_Print,     spawn,          SHCMD("dmenurecord stop") },
+	{ MODKEY|ShiftMask,             XK_BackSpace, spawn,          SHCMD("dmenushutdown") },
 
 
 	/*
