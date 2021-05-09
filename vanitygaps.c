@@ -8,6 +8,7 @@ static void incrgaps(const Arg *arg);
 // static void incrihgaps(const Arg *arg);
 // static void incrivgaps(const Arg *arg);
 static void togglegaps(const Arg *arg);
+static void togglesmartgaps(const Arg *arg);
 
 /* Layouts (delete the ones you do not need) */
 static void bstack(Monitor *m);
@@ -55,6 +56,13 @@ togglegaps(const Arg *arg)
 	#else
 	enablegaps = !enablegaps;
 	#endif // PERTAG_PATCH
+	arrange(NULL);
+}
+
+void
+togglesmartgaps(const Arg *arg)
+{
+	smartgaps = !smartgaps;
 	arrange(NULL);
 }
 

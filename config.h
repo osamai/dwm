@@ -108,6 +108,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_s,         togglesticky,   {0} },
 	{ MODKEY,                       XK_f,         togglefullscr,  {0} },
 	{ MODKEY,                       XK_a,         togglegaps,     {0} },
+	{ MODKEY|ALTKEY,                XK_a,         togglesmartgaps,{0} },
 	{ MODKEY|ShiftMask,             XK_a,         defaultgaps,    {0} },
 	{ MODKEY,                       XK_z,         incrgaps,       {.i = +3 } },
 	{ MODKEY|ShiftMask,             XK_z,         incrgaps,       {.i = -3 } },
