@@ -146,7 +146,6 @@ static Key keys[] = {
 	{ ALTKEY,                       XK_e,         spawn,          SHCMD("$TERMINAL -e neomutt") },
 	{ ALTKEY,                       XK_b,         spawn,          SHCMD("$BROWSER") },
 	{ ALTKEY,                       XK_p,         spawn,          SHCMD("mpv --really-quiet \"$(xclip -o)\"") },
-	{ ALTKEY|ShiftMask,             XK_l,         spawn,          SHCMD("slock") },
 	{ ALTKEY|ShiftMask,             XK_equal,     spawn,          SHCMD("pamixer --allow-boost -i 5 && pkill -RTMIN+7 dwmblocks") },
 	{ ALTKEY|ShiftMask,             XK_minus,     spawn,          SHCMD("pamixer --allow-boost -d 5 && pkill -RTMIN+7 dwmblocks") },
 	{ ALTKEY|ShiftMask,             XK_BackSpace, spawn,          SHCMD("pamixer -t && pkill -RTMIN+7 dwmblocks") },
