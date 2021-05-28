@@ -156,13 +156,12 @@ static Key keys[] = {
 	{ ALTKEY|ShiftMask,             XK_backslash, spawn,          SHCMD("dunstctl set-paused toggle && pkill -RTMIN+6 dwmblocks") },
 	{ ALTKEY|ShiftMask,             XK_bracketleft, spawn,        SHCMD("dunstctl history-pop") },
 	{ ALTKEY|ShiftMask,             XK_bracketright, spawn,       SHCMD("dunstctl close-all") },
-	{ MODKEY,                       XK_F4,        spawn,          SHCMD("keymapswitch us ar") },
+	{ MODKEY,                       XK_F4,        spawn,          SHCMD("setxkbmap \"$(setxkbmap -query | awk '/layout/{print ($2 == \"us\" ? \"ar\" : \"us\")}')\"; pkill -RTMIN+8 dwmblocks") },
 	{ MODKEY,                       XK_F5,        spawn,          SHCMD("dmenuhandler") },
 	{ 0,                            XK_Print,     spawn,          SHCMD("dmenuscreenshot") },
 	{ ShiftMask,                    XK_Print,     spawn,          SHCMD("dmenurecord") },
 	{ ALTKEY|ShiftMask,             XK_Print,     spawn,          SHCMD("dmenurecord stop") },
 	{ MODKEY|ShiftMask,             XK_BackSpace, spawn,          SHCMD("dmenushutdown") },
-
 
 	/*
 	{ MODKEY,                       XK_space,     setlayout,      {0} },
