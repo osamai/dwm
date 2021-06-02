@@ -140,12 +140,12 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                         6)
 	TAGKEYS(                        XK_8,                         7)
 	TAGKEYS(                        XK_9,                         8)
-	{ ALTKEY,                       XK_v,         spawn,          SHCMD("$TERMINAL -e $EDITOR") },
-	{ ALTKEY,                       XK_f,         spawn,          SHCMD("$TERMINAL -e nnn -Rr") },
-	{ ALTKEY,                       XK_m,         spawn,          SHCMD("$TERMINAL -e ncmpcpp") },
-	{ ALTKEY,                       XK_e,         spawn,          SHCMD("$TERMINAL -e neomutt") },
-	{ ALTKEY,                       XK_b,         spawn,          SHCMD("$BROWSER") },
-	{ ALTKEY,                       XK_p,         spawn,          SHCMD("mpv --really-quiet \"$(xclip -o)\"") },
+	{ ALTKEY|ShiftMask,             XK_v,         spawn,          SHCMD("$TERMINAL -e $EDITOR") },
+	{ ALTKEY|ShiftMask,             XK_f,         spawn,          SHCMD("$TERMINAL -e nnn -Rr") },
+	{ ALTKEY|ShiftMask,             XK_m,         spawn,          SHCMD("$TERMINAL -e ncmpcpp") },
+	{ ALTKEY|ShiftMask,             XK_e,         spawn,          SHCMD("$TERMINAL -e neomutt") },
+	{ ALTKEY|ShiftMask,             XK_b,         spawn,          SHCMD("$BROWSER") },
+	{ ALTKEY|ShiftMask,             XK_p,         spawn,          SHCMD("mpv --really-quiet \"$(xclip -o)\"") },
 	{ ALTKEY|ShiftMask,             XK_equal,     spawn,          SHCMD("pamixer --allow-boost -i 5 && pkill -RTMIN+7 dwmblocks") },
 	{ ALTKEY|ShiftMask,             XK_minus,     spawn,          SHCMD("pamixer --allow-boost -d 5 && pkill -RTMIN+7 dwmblocks") },
 	{ ALTKEY|ShiftMask,             XK_BackSpace, spawn,          SHCMD("pamixer -t && pkill -RTMIN+7 dwmblocks") },
